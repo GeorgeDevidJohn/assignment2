@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/search.css">
+     <link rel="stylesheet" href="stylesheets/style.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <h3> {{title}}</h3>     
+    {{!-- <form  method="post" >
+        <div  class="formData"
+    >
+    
+            <input type="number" id="index" name="index" required>
+            <button type="submit" >Search</button>
+        </div>
+        </form> --}}
+
+        
+        <input type="number" id="index" name="index" placeholder="Enter the index" required>
+<a id="link" href="#">Click Here</a>
+
+<script>
+  document.getElementById('index').addEventListener('input', function() {
+    var inputValue = this.value;
+    var linkElement = document.getElementById('link');
+    linkElement.href = "/alldata/invoiceID/" + inputValue;
+  });
+</script>
+        <div style="color: rgb(100, 81, 51); font-size:2em;font-weight:600; padding:1em"> <span>{{description}}</span>  {{content}}</div>
+        <div style="color: rgb(146, 62, 60); font-size:1.4em;font-weight:600; padding:1em"> {{error}}</div>
+      
+</body>
+</html>
+{{!-- /******************************************************************************
+***
+* ITE5315 – Assignment 2
+* I declare that this assignment is my own work in accordance with Humber Academic Policy.
+* No part of this assignment has been copied manually or electronically from any other source
+* (including web sites) or distributed to other students.
+*
+* Name: _George devid john______ Student ID: _no1547325_______ Date: __November 3_________
+*
+*
+******************************************************************************
+**/  --}}

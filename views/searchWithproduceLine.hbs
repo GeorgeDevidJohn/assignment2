@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/search.css">
+  
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h3> {{title}}</h3>
+    <form  method="post">
+        <div class="formData">
+            <input type="text" id="produceLine" name="produceLine" required>
+            <button type="submit">Search</button>
+            </div>
+    </form>
+    <style>
+        div {
+            font-family: sans-serif;
+        }
+    </style>
+<div class="grid" style="display: grid;grid-template-columns: repeat(2, 1fr); ">
+ {{#each foundDatas}}
+  
+    <div style="
+                   display: flex;
+                   justify-content: center;
+                   margin-top: 5em;
+                  
+               ">
+        <div class="card_body" style="
+               border-radius: 20px;
+               
+               background-size: cover;
+               background-image: url(https://digitalsynopsis.com/wp-content/uploads/2017/03/beautiful-color-gradients-backgrounds-078-cochiti-lake.png);
+               box-shadow: 3px 4px 4px #66666652;">
+            <div style="backdrop-filter: blur(5px) brightness(120%);border-radius: 20px;
+               -webkit-backdrop-filter: blur(12px) brightness(120%); padding: 2em; row-gap: 2em;
+                   display: flex;flex-direction: column;">
+                <div style="   display: flex;
+               row-gap: 1em;
+               justify-content: space-between;
+               align-items: baseline;
+               flex-direction: column;">
+                    <span style="padding-left: 1em;
+               padding-left: 1em;
+               background-color: #e3a03e;
+               font-family: sans-serif;
+               font-weight: 600;
+               color: #ffffff;
+               border-radius: 20px;
+               padding-right: 1em;
+               padding-top: 0.5em;
+               padding-bottom: 0.5em;
+           ">InvoiceID: {{this.Invoice_ID}} </br></span>
+                    <div style="display: flex;
+                   column-gap: 4px;align-items: baseline;;
+               ">
+                        <div style="    font-size: 32px;
+                   font-family: sans-serif;
+                   font-weight: 600;
+                   width: 6em;
+                   word-break: break-word;
+                   color: #141c4e;">{{this.Product_line}}     <img src={{this.image}} height="100" alt="Image Unavaialble"></div> 
+                   <span style="    font-size: 23px;
+                   font-family: sans-serif;
+                   font-weight: 100;
+                   width: 12em;
+                   word-break: break-word;
+                   color: #545456;
+               ">{{this.name}}</span>
+                    </div>
+                    <div> Unit price: <span style="font-family: sans-serif;
+                   font-size: 1em;
+                   font-weight: 600;"> {{this.Unit_price}}</span></div>
+                </div>
+                <div style="display: flex;
+               row-gap: 1em;
+               flex-direction: column;
+               padding: 1em;
+               background-color: #3c82b48c;
+               border-radius: 20px;">
+                    <div style="display: flex;
+               flex-direction: column;
+               row-gap: 4px;">
+                        <span style="
+               display: flex;
+               flex-direction: column;"><span style="font-weight: 800;">Quantity:</span>
+                            <span>{{this.Quantity}}</span></span>
+                        <span style="
+               display: flex;
+               flex-direction: column;"><span style="font-weight: 800;">Tax 5%</span> <span>$
+                                {{this.Tax_5}}</span></span>
+                    </div>
+
+                    <div style="display: flex;
+               column-gap: 3em;
+               justify-content: center;">
+                        <span><span style="font-weight: 800;"> Date </span>
+                            <span>{{this.Date}}</span></span>
+                        <span><span style="font-weight: 800;">Time </span>
+                            <span>{{this.Time}}</span></span>
+                        <span><span style="font-weight: 800;">Payment: </span>
+                            <span>{{this.Payment}}</span></span>
+
+                    </div>
+                    <div>
+                        <span style="font-weight: 800;">Rating : <span>{{this.Width}} x
+                                {{this.Rating}}</span></span>
+                    </div>
+                </div>
+                <div>
+                    <div style="    color: wheat;
+                   background-color: #000000a8;
+                   display: flex;
+                   column-gap: 3em;
+                   justify-content: center;
+                   flex-direction: row;
+                   padding: 16px;
+                   border-radius: 15px;">
+                        <span style="
+                       display: flex;
+                       flex-direction: column;"><span style="font-weight: 800;">Branch</span>
+                            <span>{{this.Branch}}</span></span>
+                        <span style="
+                       display: flex;
+                       flex-direction: column;"><span style="font-weight: 800;">City</span>
+                            <span>{{this.City}}</span></span>
+                        <span style="
+                       display: flex;
+                       flex-direction: column;"><span style="font-weight: 800;">Customer Type</span>
+                            <span>{{this.Customer_type}}</span></span>
+                        <span style="
+                       display: flex;
+                       flex-direction: column;"><span style="font-weight: 800;">Gross Income</span>
+                            <span>{{this.gross_income}}</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ {{/each}}
+ 
+</div>
+                {{#unless foundDatas}}
+            <div style="color: rgb(146, 62, 60); font-size:1.4em;font-weight:600; padding:1em"> No data found</div>
+            {{/unless}}
+
+
+
+</body>
+
+</html>
+{{!-- /******************************************************************************
+***
+* ITE5315 – Assignment 2
+* I declare that this assignment is my own work in accordance with Humber Academic Policy.
+* No part of this assignment has been copied manually or electronically from any other source
+* (including web sites) or distributed to other students.
+*
+* Name: _George devid john______ Student ID: _no1547325_______ Date: __November 3_________
+*
+*
+******************************************************************************
+**/  --}}

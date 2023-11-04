@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<table>
+  <tbody>
+    <th>Invoice ID</th>
+    <th>Branch</th>
+    <th>City</th>
+    <th>Customer type</th>
+    <th>Product line</th>
+          <th>name</th>
+           <th>image</th>
+           <th>Unit price</th>
+           {{!-- <th>Quantity</th> --}}
+            {{!-- <th>Tax 5%</th> --}}
+             <th>Total</th>
+             <th>Date</th>
+                  <th>Time</th>
+
+                   {{!-- <th>Payment</th> --}}
+                         {{!-- <th>cogs</th> --}}
+                         <th>gross income</th>
+                          <th>Rating</th>
+    {{#each foundData}}
+
+   <tr class="{{highlightIfZero this.Rating}}">
+      <td>{{this.Invoice_ID}}</td>
+   
+
+      <td>{{this.Branch}}</td>
+  
+      
+      <td>{{this.City}}</td>
+      <td>{{this.Customer_type}}</td>
+ 
+      <td>{{this.Product_line}}</td>
+
+
+      <td>{{this.name}}</td>
+ 
+      
+      <td><img src="{{this.image}}" alt="{{this.name}}" style="max-width: 60px;"></td>
+      
+      <td>{{this.Unit_price}}</td>
+   
+      
+      {{!-- <td>{{this.Quantity}}</td>
+   
+     
+      <td>{{this.Tax_5}}</td>
+    --}}
+     
+      <td>{{this.Total}}</td>
+ 
+   
+      <td>{{this.Date}}</td>
+ 
+ 
+      <td>{{this.Time}}</td>
+    
+      {{!-- <td>{{this.Payment}}</td>
+
+      <td>{{this.cogs}}</td> --}}
+    
+      <td>{{this.gross_income}}</td>
+   
+      <td>{{replaceZero this.Rating}}</td>
+</tr>
+
+    {{/each}}
+  </tbody>
+</table>
+<style>
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border-radius: 15px;
+     font-family: sans-serif;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  .highlight {
+    font-weight: 900;
+    color: brown;
+    background-color: aqua;
+
+  }
+  th {
+    background-color: gray;
+    color: white;
+  }
+
+  td {
+    {{!-- background-color: rgb(204, 204, 204); --}}
+  }
+
+  img {
+    max-width: 60px;
+  }
+</style>
+</body>
+</html>
+
+{{!-- /******************************************************************************
+***
+* ITE5315 – Assignment 2
+* I declare that this assignment is my own work in accordance with Humber Academic Policy.
+* No part of this assignment has been copied manually or electronically from any other source
+* (including web sites) or distributed to other students.
+*
+* Name: _George devid john______ Student ID: _no1547325_______ Date: __November 3_________
+*
+*
+******************************************************************************
+**/  --}}
